@@ -1,5 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Home, SinglePost, Write, Register, Login, SharedLayout } from './pages'
+import {
+  Home,
+  SinglePost,
+  CreatePost,
+  Register,
+  Login,
+  SharedLayout,
+} from './pages'
 
 const router = createBrowserRouter([
   {
@@ -11,12 +18,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/post',
+        path: '/post/:id',
         element: <SinglePost />,
       },
       {
-        path: '/write',
-        element: <Write />,
+        path: '/create',
+        element: <CreatePost />,
       },
     ],
   },
