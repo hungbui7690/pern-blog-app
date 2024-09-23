@@ -12,6 +12,7 @@ const Posts = db.define('Posts', {
   desc: Sequelize.TEXT,
   body: Sequelize.TEXT,
   image: Sequelize.STRING,
+  category: Sequelize.STRING,
   userId: {
     type: Sequelize.INTEGER,
     references: {

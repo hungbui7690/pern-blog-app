@@ -6,28 +6,29 @@ module.exports = {
       'Posts',
       {
         id: {
-          allowNull: false,
+          type: Sequelize.INTEGER,
           autoIncrement: true,
           primaryKey: true,
-          type: Sequelize.INTEGER,
+          allowNull: false,
         },
         title: Sequelize.STRING,
         desc: Sequelize.STRING,
         body: Sequelize.TEXT,
         image: Sequelize.STRING,
+        category: Sequelize.STRING,
         updatedAt: Sequelize.DATE,
         createdAt: Sequelize.DATE,
       },
       {
         hooks: {
-          beforeCreate: function (user, options, fn) {
-            user.createdAt = new Date()
-            user.updatedAt = new Date()
-            fn(null, user)
+          beforeCreate: function (post, options, fn) {
+            post.createdAt = new Date()
+            post.updatedAt = new Date()
+            fn(null, post)
           },
-          beforeUpdate: function (user, options, fn) {
-            user.updatedAt = new Date()
-            fn(null, user)
+          beforeUpdate: function (post, options, fn) {
+            post.updatedAt = new Date()
+            fn(null, post)
           },
         },
       }

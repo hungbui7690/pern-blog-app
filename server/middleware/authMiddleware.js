@@ -14,9 +14,13 @@ const authenticateUser = async (req, res, next) => {
   if (!decoded) {
     throw new UnauthenticatedError('Unauthenticated - Invalid Token')
   }
+  console.log(decoded)
 
   // find user from userId return from token
-  const user = await User.findById(decoded.userId).select('-password')
+  const user = await User.findOne({
+    where: { id: decoded.userId },
+    attributes: { exclude: ['password'] },
+  })
   if (!user) {
     throw new NotFoundError('User not found')
   }
