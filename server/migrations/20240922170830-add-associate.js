@@ -12,7 +12,8 @@ module.exports = {
       onDelete: 'SET NULL',
     })
   },
-  async down(queryInterface, Sequelize) {
+  async down(queryInterface) {
     await queryInterface.dropTable('Posts')
+    await queryInterface.dropTable('Users')
   },
 }

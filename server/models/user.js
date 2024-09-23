@@ -1,18 +1,23 @@
 'use strict'
-const { Model } = require('sequelize')
-module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define('User', {
-    username: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    image: DataTypes.STRING,
+const Sequelize = require('sequelize')
+const { db } = require('../db/pg-connect.js')
+
+const User = db.define('User', {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  username: Sequelize.STRING,
+  email: Sequelize.STRING,
+  password: Sequelize.STRING,
+  image: Sequelize.STRING,
+})
+
+User.associate = function (models) {
+  User.hasMany(models.Post, {
+    foreignKey: 'userId',
   })
-
-  User.associate = function (models) {
-    User.hasMany(models.Post, {
-      foreignKey: 'userId',
-    })
-  }
-
-  return User
 }
+
+module.exports = User

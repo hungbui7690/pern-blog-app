@@ -1,27 +1,26 @@
 const users = [
   {
-    id: 1,
     username: 'admin',
+    email: 'admin@admin',
     password: '$2a$10$oSOfpQCa57M3.TxhYQq0p.dGfsxSXXugg0Vvue6tYJEj3SLPpTFm2',
-    image: 'https://picsum.photos/1200/800',
+    image: 'https://picsum.photos/50/50',
   },
   {
-    id: 2,
     username: 'user',
+    email: 'user@user',
     password: '$2a$10$oSOfpQCa57M3.TxhYQq0p.dGfsxSXXugg0Vvue6tYJEj3SLPpTFm2',
-    image: 'https://picsum.photos/1200/800',
+    image: 'https://picsum.photos/50/50',
   },
   {
-    id: 3,
     username: 'test',
+    email: 'test@test',
     password: '$2a$10$oSOfpQCa57M3.TxhYQq0p.dGfsxSXXugg0Vvue6tYJEj3SLPpTFm2',
-    image: 'https://picsum.photos/1200/800',
+    image: 'https://picsum.photos/50/50',
   },
 ]
 
 const posts = [
   {
-    id: 1,
     title: 'My first post',
     desc: 'This is my first post',
     image: 'https://picsum.photos/1200/800',
